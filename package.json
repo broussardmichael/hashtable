@@ -1,0 +1,26 @@
+{
+  "name": "hashtable",
+  "version": "1.0.0",
+  "description": "a hash table module",
+  "main": "hashtable.js",
+  "scripts": {
+    "test": "mocha --Reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broussardmichael/hashtable.git"
+  },
+  "keywords": [
+    "hashtable"
+  ],
+  "author": "Michael Broussard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/broussardmichael/hashtable/issues"
+  },
+  "homepage": "https://github.com/broussardmichael/hashtable#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.1"
+  }
+}
