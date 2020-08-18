@@ -50,7 +50,7 @@ module.exports = (function(){
     }
 
     let searchTableWithLinearProbing = function (key) {
-        let HashTable = this, numOfIndexesSearched = 0;
+        let HashTable = this, numOfIndexesSearched = 0, found = false;
         if(isNaN(key))
             throw "The key must be an integer.";
 
@@ -58,8 +58,12 @@ module.exports = (function(){
         if(HashTable.table[index] === key)
             return true;
 
-        while(numOfIndexesSearched !== HashTable.tableLength && HashTable.table[index] !== key) {
-            index = index++ % table.tableLength;
+        while(numOfIndexesSearched !== HashTable.tableLength) {
+            if(HashTable.table[index] === key)
+                return true;
+
+            index++;
+            index = index % HashTable.tableLength;
             numOfIndexesSearched++;
         }
         return false;
