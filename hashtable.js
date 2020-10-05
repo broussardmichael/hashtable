@@ -1,5 +1,4 @@
 module.exports = (function(){
-    let hashTable = {};
     class HashTable {
         constructor(tableLength){
             this.table = new Array(tableLength)
@@ -11,16 +10,6 @@ module.exports = (function(){
 
     let hashFunction = function(key, tableLength){
         return key % tableLength;
-    }
-
-    hashTable.createHashTable = function(sizeOfTable) {
-        let hashTable;
-        if(isNaN(sizeOfTable))
-            throw "The table size must be a number.";
-
-        hashTable = new HashTable(sizeOfTable);
-
-        return hashTable;
     }
 
     let populateHashTableWithArrayOfKeys = function(arrayOfKeys){
@@ -69,5 +58,14 @@ module.exports = (function(){
         return false;
     }
 
-    return hashTable;
+    return {
+        createHashTable: function(sizeOfTable) {
+            let hashTable;
+            if(isNaN(sizeOfTable))
+                throw "The table size must be a number.";
+
+            hashTable = new HashTable(sizeOfTable);
+
+            return hashTable;
+        }};
 });
